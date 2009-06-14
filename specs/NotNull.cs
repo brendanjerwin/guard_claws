@@ -14,10 +14,8 @@ namespace specs
     }
 
     [Subject(typeof(Claws),"NotNull")]
-    public class when_calling_NotNull_with_a_null_input
+    public class when_calling_NotNull_with_a_null_input : with_exception
     {
-        protected static ValidationFailureException the_exception;
-
         Because of = () =>
             {
                 string test = null;

@@ -10,5 +10,10 @@ namespace GuardClaws
             if (variable.Invoke() != null) return;
             throw new VariableMayNotBeNullException(Reflect.VariableName(variable));
         }
+
+        public static void NotNullNotBlank<T>(Func<T> func)
+        {
+            
+        }
     }
 }
