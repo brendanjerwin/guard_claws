@@ -12,7 +12,7 @@ namespace GuardClaws
 
         static string BuildMessage(string nameOfDelinquent, string message)
         {
-            return string.Format("{0}/n/nVariable: {1}", message, nameOfDelinquent); 
+            return string.Format("{0}/n/nDelinquent: {1}", message, nameOfDelinquent); 
         }
 
         public string NameOfDelinquent { get; private set; }
