@@ -1,5 +1,3 @@
-using System;
-
 namespace GuardClaws
 {
     public class VariableMayNotBeNullException : ValidationFailureException
