@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guard_claws", "guard_claws.csproj", "{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guard_claws", "guard_claws\guard_claws.csproj", "{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "specs", "specs\specs.csproj", "{B3F42A16-048F-4401-856A-00899A381F23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F42A16-048F-4401-856A-00899A381F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F42A16-048F-4401-856A-00899A381F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F42A16-048F-4401-856A-00899A381F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F42A16-048F-4401-856A-00899A381F23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@
     <ProjectGuid>{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>guard_claws</RootNamespace>
+    <RootNamespace>GuardClaws</RootNamespace>
     <AssemblyName>guard_claws</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Claws.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflect.cs" />
+    <Compile Include="ValidationFailureException.cs" />
+    <Compile Include="VariableMayNotBeNullException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
