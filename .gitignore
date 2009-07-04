@@ -1,9 +1,11 @@
 *.sou
 *.user
-_Resharper*
+_ReSharper.*/
 *.userprefs
 *.pidb
 **/test-results/**
 test-results/
 .DS_Store
 bin/
+obj/
+*.suo

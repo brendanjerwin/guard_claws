@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Claws.cs" />
+    <Compile Include="NotNullNotBlank\VariableMayNotBeBlankException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflect.cs" />
     <Compile Include="ValidationFailureException.cs" />
