@@ -1,0 +1,7 @@
+=== Build 1.0.1 ===
+
+	1 Defect	 test fix	 
+	2 Enhancement	 improve support to Nullable types	 
+	3 Enhancement	 Or restriction suggestion	 
+	5 Enhancement	 Strong name	 
+	6 Enhancement	 Implement fluently DoesNotThrow

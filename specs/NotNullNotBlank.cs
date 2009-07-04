@@ -1,21 +1,19 @@
+using NUnit.Framework;
+using NUnit.Framework.ExtensionsImpl;
+using NUnit.Framework.Constraints;
+using System;
 using GuardClaws;
-using Machine.Specifications;
 
-namespace specs
+namespace NotNullNotBlank
 {
-    [Subject(typeof (Claws), "NotNullNotBlank")]
+	[TestFixture]
     public class when_called_with_a_valid_input
     {
-        It should_do_nothing = () =>
-            {
-                var test = "valid value";
-                Claws.NotNullNotBlank(()=>test);
-            };
-    }
-
-    [Subject(typeof (Claws), "NotNullNotBlank")]
-    public class when_called_with_a_null_input : with_exception
-    {
-        
+		[Test]
+        public void it_should_do_nothing () 
+        {
+            var test = "valid value";
+            Claws.NotNullNotBlank(()=>test);
+        }
     }
 }    
