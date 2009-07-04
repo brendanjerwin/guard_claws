@@ -1,3 +1,4 @@
+using GuardClaws.Exceptions;
 using NUnit.Framework;
 using GuardClaws;
 

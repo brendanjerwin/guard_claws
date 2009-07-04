@@ -1,4 +1,5 @@
 using System;
+using GuardClaws.Exceptions;
 
 namespace GuardClaws
 {
