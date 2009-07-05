@@ -37,5 +37,14 @@ namespace GuardClaws
             if(!variable.Invoke().Equals(comparedTo)) return;
             throw new VariableMustNotBeEqualException<T>(variable,comparedTo);
         }
+
+        public static void AtLeast<T>(Func<T> variable, T comparedTo) where T:IComparable
+        {
+            var val = variable.Invoke();
+            if (val.Equals(comparedTo)) return;
+            if (((IComparable)val).CompareTo(comparedTo)>0) return;
+
+            throw new VariableMustBeAtLeastException<T>(variable, comparedTo);
+        }
     }
 }

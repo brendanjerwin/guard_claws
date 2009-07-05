@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\GuardClauseComparisonViolationException.cs" />
+    <Compile Include="Exceptions\VariableMustBeAtLeastException.cs" />
     <Compile Include="Claws.cs" />
     <Compile Include="Exceptions\VariableMustNotBeBlankException.cs" />
     <Compile Include="Exceptions\VariableMustBeNumericException.cs" />

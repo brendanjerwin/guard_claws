@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AtLeast;
 using GuardClaws;
 using GuardClaws.Exceptions;
 using NUnit.Framework;
@@ -22,19 +23,13 @@ namespace NotEqual
     }
 
     [TestFixture]
-    public class when_called_with_an_equal_value : expect_an_exception<VariableMustNotBeEqualException<string>,string>
+    public class when_called_with_an_equal_value : expect_a_ComparisonViolation_exception<VariableMustNotBeEqualException<string>,string>
     {
-        string compareTo = "foo";
         protected override void StatementUnderTest()
         {
+            compareTo = "foo";
             test = compareTo;
             Claws.NotEqual(()=>test,compareTo);
-        }
-
-        [Test] public void 
-            it_should_put_the_compareTo_value_in_the_ComparedTo_on_the_exception()
-        {
-            the_exception.ComparedTo.Should().Be.EqualTo(compareTo);
         }
     }
 }
