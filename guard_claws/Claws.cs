@@ -11,12 +11,22 @@ namespace GuardClaws
             throw new VariableMustNotBeNullException(Reflect.VariableName(variable));
         }
 
-        public static void NotNullNotBlank(Func<string> func)
+        public static void NotNullNotBlank(Func<string> variable)
         {
             throw new NotImplementedException();
         }
 
-        public static void Numeric(Func<string> func)
+        public static void Numeric(Func<string> variable)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void NotDefault<T>(Func<T> variable)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void NotEqual<T>(Func<T> variable, T comparedTo) 
         {
             throw new NotImplementedException();
         }

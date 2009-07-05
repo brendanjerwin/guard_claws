@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotDefault.cs" />
+    <Compile Include="NotEqual.cs" />
     <Compile Include="NotNull.cs" />
     <Compile Include="NotNullNotBlank.cs" />
     <Compile Include="Numeric.cs" />
