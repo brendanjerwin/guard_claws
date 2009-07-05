@@ -1,5 +1,5 @@
 ﻿using GuardClaws;
-using GuardClaws.Numeric;
+using GuardClaws.Exceptions;
 using NUnit.Framework;
 
 namespace Numeric

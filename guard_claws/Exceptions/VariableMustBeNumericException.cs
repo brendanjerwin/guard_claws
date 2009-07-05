@@ -1,6 +1,4 @@
-using GuardClaws.Exceptions;
-
-namespace GuardClaws.Numeric
+namespace GuardClaws.Exceptions
 {
     public class VariableMustBeNumericException : GuardClauseViolationException
     {

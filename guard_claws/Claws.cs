@@ -13,22 +13,29 @@ namespace GuardClaws
 
         public static void NotNullNotBlank(Func<string> variable)
         {
-            throw new NotImplementedException();
+            NotNull(variable);
+
+            if(variable.Invoke() != string.Empty) return;
+            throw new VariableMustNotBeBlankException(Reflect.VariableName(variable));
         }
 
         public static void Numeric(Func<string> variable)
         {
-            throw new NotImplementedException();
+            double junk;
+            if (double.TryParse(variable.Invoke(),out junk)) return;
+            throw new VariableMustBeNumericException(Reflect.VariableName(variable));
         }
 
         public static void NotDefault<T>(Func<T> variable)
         {
-            throw new NotImplementedException();
+            if (!variable.Invoke().Equals(default(T))) return;
+            throw new VariableMustNotBeDefaultValueException(Reflect.VariableName(variable));
         }
 
         public static void NotEqual<T>(Func<T> variable, T comparedTo) 
         {
-            throw new NotImplementedException();
+            if(!variable.Invoke().Equals(comparedTo)) return;
+            throw new VariableMustNotBeEqualException(Reflect.VariableName(variable),comparedTo);
         }
     }
 }
