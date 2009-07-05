@@ -19,7 +19,7 @@ namespace NotNullNotBlank
     }
 
     [TestFixture]
-    public class when_called_with_a_null : expect_an_exception<VariableMustNotBeNullException,string>
+    public class when_called_with_a_null : expect_an_exception<VariableMustNotBeNullException<string>,string>
     {
         protected override void StatementUnderTest()
         {

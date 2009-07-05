@@ -2,9 +2,9 @@ using System;
 
 namespace GuardClaws.Exceptions
 {
-    public class VariableMustNotBeDefaultValueException : GuardClauseViolationException
+    public class VariableMustNotBeDefaultValueException<T> : GuardClauseViolationException<T>
     {
-        public VariableMustNotBeDefaultValueException(string nameOfDelinquent) : base(nameOfDelinquent, "Variable must not be it's default value.")
+        public VariableMustNotBeDefaultValueException(Func<T> delinquent) : base(delinquent, "Variable must not be it's default value.")
         {
         }
     }

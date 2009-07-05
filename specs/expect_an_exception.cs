@@ -2,7 +2,7 @@ using GuardClaws.Exceptions;
 using NUnit.Framework;
 
 
-public abstract class expect_an_exception<TExpectedExceptionType, TVariableType> where TExpectedExceptionType : GuardClauseViolationException
+public abstract class expect_an_exception<TExpectedExceptionType, TVariableType> where TExpectedExceptionType : GuardClauseViolationException<TVariableType>
 {
     protected TExpectedExceptionType the_exception;
 
@@ -17,7 +17,7 @@ public abstract class expect_an_exception<TExpectedExceptionType, TVariableType>
         {
             StatementUnderTest();
         }
-        catch (GuardClauseViolationException ex)
+        catch (GuardClauseViolationException<TVariableType> ex)
         {
             the_exception = (TExpectedExceptionType)ex;
         }

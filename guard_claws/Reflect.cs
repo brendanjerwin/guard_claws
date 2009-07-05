@@ -27,7 +27,7 @@ namespace GuardClaws
         static readonly byte Ret = (byte) OpCodes.Ret.Value;
 
 
-        internal static string VariableName<T>(Func<T> expression)
+        public static string VariableName<T>(Func<T> expression)
         {
             return Variable(expression).Name;
         }

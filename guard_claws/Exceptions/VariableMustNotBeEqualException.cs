@@ -2,13 +2,13 @@ using System;
 
 namespace GuardClaws.Exceptions
 {
-    public class VariableMustNotBeEqualException : GuardClauseViolationException
+    public class VariableMustNotBeEqualException<T> : GuardClauseViolationException<T>
     {
-        public VariableMustNotBeEqualException(string nameOfDelinquent, object comparedTo) : base(nameOfDelinquent, "Variable must not be equal to provided comparison value.")
+        public VariableMustNotBeEqualException(Func<T> delinquent, T comparedTo) : base(delinquent, "Variable must not be equal to provided comparison value.")
         {
             ComparedTo = comparedTo;
         }
 
-        public object ComparedTo { get; private set; }
+        public T ComparedTo { get; private set; }
     }
 }

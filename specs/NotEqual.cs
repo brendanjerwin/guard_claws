@@ -22,7 +22,7 @@ namespace NotEqual
     }
 
     [TestFixture]
-    public class when_called_with_an_equal_value : expect_an_exception<VariableMustNotBeEqualException,string>
+    public class when_called_with_an_equal_value : expect_an_exception<VariableMustNotBeEqualException<string>,string>
     {
         string compareTo = "foo";
         protected override void StatementUnderTest()

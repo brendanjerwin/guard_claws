@@ -1,8 +1,10 @@
+using System;
+
 namespace GuardClaws.Exceptions
 {
-    public class VariableMustNotBeBlankException : GuardClauseViolationException
+    public class VariableMustNotBeBlankException : GuardClauseViolationException<string>
     {
-        public VariableMustNotBeBlankException(string nameOfDelinquent) : base(nameOfDelinquent, "Variable must not be blank.")
+        public VariableMustNotBeBlankException(Func<string> delinquent) : base(delinquent, "Variable must not be blank.")
         {
         }
     }

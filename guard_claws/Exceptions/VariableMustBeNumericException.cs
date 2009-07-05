@@ -1,8 +1,11 @@
+using System;
+
 namespace GuardClaws.Exceptions
 {
-    public class VariableMustBeNumericException : GuardClauseViolationException
+    public class VariableMustBeNumericException : GuardClauseViolationException<string>
     {
-        public VariableMustBeNumericException(string nameOfDelinquent) : base(nameOfDelinquent, "Variable must be numeric.")
+        public VariableMustBeNumericException(Func<string> delinquent)
+            : base(delinquent, "Variable must be numeric.")
         {
         }
     }

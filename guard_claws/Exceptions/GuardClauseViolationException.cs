@@ -2,16 +2,16 @@ using System;
 
 namespace GuardClaws.Exceptions
 {
-    public class GuardClauseViolationException : ApplicationException
+    public class GuardClauseViolationException<T> : ApplicationException
     {
-        protected GuardClauseViolationException(string nameOfDelinquent, string message) : base(BuildMessage(nameOfDelinquent, message))
+        protected GuardClauseViolationException(Func<T> delinquent , string message) : base(BuildMessage(delinquent, message))
         {
-            NameOfDelinquent = nameOfDelinquent;
+            NameOfDelinquent = Reflect.VariableName(delinquent);
         }
 
-        static string BuildMessage(string nameOfDelinquent, string message)
+        static string BuildMessage(Func<T> delinquent, string message)
         {
-            return string.Format("{0}/n/nDelinquent: {1}", message, nameOfDelinquent); 
+            return string.Format("{0}/n/nDelinquent: {1}", message, Reflect.VariableName(delinquent)); 
         }
 
         public string NameOfDelinquent { get; private set; }
