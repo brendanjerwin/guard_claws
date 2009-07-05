@@ -19,7 +19,7 @@ namespace NotNullNotBlank
     }
 
     [TestFixture]
-    public class when_called_with_a_null : expect_a_ValidationFailureException<string,VariableMayNotBeNullException>
+    public class when_called_with_a_null : expect_an_exception<VariableMustNotBeNullException,string>
     {
         protected override void StatementUnderTest()
         {
@@ -29,7 +29,7 @@ namespace NotNullNotBlank
     }
 
     [TestFixture]
-    public class when_called_with_a_blank : expect_a_ValidationFailureException<string,VariableMayNotBeBlankException>
+    public class when_called_with_a_blank : expect_an_exception<VariableMustNotBeBlankException,string>
     {
         protected override void StatementUnderTest()
         {

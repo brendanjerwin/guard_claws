@@ -2,9 +2,9 @@ using System;
 
 namespace GuardClaws.Exceptions
 {
-    public class ValidationFailureException : ApplicationException
+    public class GuardClauseViolationException : ApplicationException
     {
-        public ValidationFailureException(string nameOfDelinquent, string message) : base(BuildMessage(nameOfDelinquent, message))
+        protected GuardClauseViolationException(string nameOfDelinquent, string message) : base(BuildMessage(nameOfDelinquent, message))
         {
             NameOfDelinquent = nameOfDelinquent;
         }

@@ -46,11 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Claws.cs" />
-    <Compile Include="Exceptions\VariableMayNotBeBlankException.cs" />
+    <Compile Include="Exceptions\VariableMustNotBeBlankException.cs" />
+    <Compile Include="Exceptions\VariableMustBeNumericException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflect.cs" />
-    <Compile Include="Exceptions\ValidationFailureException.cs" />
-    <Compile Include="Exceptions\VariableMayNotBeNullException.cs" />
+    <Compile Include="Exceptions\GuardClauseViolationException.cs" />
+    <Compile Include="Exceptions\VariableMustNotBeNullException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
