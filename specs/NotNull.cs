@@ -5,7 +5,7 @@ using GuardClaws;
 namespace NotNull
 {
     [TestFixture]
-    public class when_calling_NotNull_with_a_not_null_input
+    public class when_called_with_a_not_null
     {
         [Test]
         public void
@@ -17,33 +17,12 @@ namespace NotNull
     }
 
     [TestFixture]
-    public class when_calling_NotNull_with_a_null_input : with_ValidationFailureException
+    public class when_called_with_a_null : expect_a_ValidationFailureException<string,VariableMayNotBeNullException>
     {
         protected override void StatementUnderTest()
         {
-            string test = null;
+            test = null;
             Claws.NotNull(() => test);
-        }
-
-        [Test]
-        public void
-            it_should_throw_a_GuardClaws_VariableMayNotBeNullException_if_the_input_is_null()
-        {
-            the_exception.Should().Be.InstanceOf<VariableMayNotBeNullException>();
-        }
-
-        [Test]
-        public void
-            it_should_put_the_variable_name_in_the_exception()
-        {
-            the_exception.NameOfDelinquent.Should().Be.EqualTo("test");
-        }
-
-        [Test]
-        public void
-            it_should_put_the_variable_name_in_the_message()
-        {
-            the_exception.Message.Should().Contain("test");
         }
     }
 }

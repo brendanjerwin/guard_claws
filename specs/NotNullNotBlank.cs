@@ -19,29 +19,22 @@ namespace NotNullNotBlank
     }
 
     [TestFixture]
-    public class when_called_with_a_null : with_ValidationFailureException
+    public class when_called_with_a_null : expect_a_ValidationFailureException<string,VariableMayNotBeNullException>
     {
         protected override void StatementUnderTest()
         {
-            string test = null;
+            test = null;
             Claws.NotNullNotBlank(() => test);
         }
     }
 
     [TestFixture]
-    public class when_called_with_a_blank : with_ValidationFailureException
+    public class when_called_with_a_blank : expect_a_ValidationFailureException<string,VariableMayNotBeBlankException>
     {
         protected override void StatementUnderTest()
         {
-            string test = string.Empty;
+            test = string.Empty;
             Claws.NotNullNotBlank(() => test);
-        }
-
-        [Test]
-        public void 
-            it_should_throw_a_GuardClaws_VariableMayNotBeBlankException()
-        {
-            the_exception.Should().Be.InstanceOf<VariableMayNotBeBlankException>();
         }
     }
 }    

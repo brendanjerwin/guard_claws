@@ -56,7 +56,7 @@
     <Compile Include="NotNull.cs" />
     <Compile Include="NotNullNotBlank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="with_ValidationFailureException.cs" />
+    <Compile Include="expect_a_ValidationFailureException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\guard_claws\guard_claws.csproj">
