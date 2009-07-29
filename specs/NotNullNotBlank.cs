@@ -1,8 +1,5 @@
 using GuardClaws.Exceptions;
 using NUnit.Framework;
-using NUnit.Framework.ExtensionsImpl;
-using NUnit.Framework.Constraints;
-using System;
 using GuardClaws;
 
 namespace NotNullNotBlank
