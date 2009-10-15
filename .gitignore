@@ -1,3 +1,4 @@
+*.usertasks
 *.sou
 *.user
 _ReSharper.*/
