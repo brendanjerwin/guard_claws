@@ -1,6 +1,5 @@
-SomethingElseOrOther
+*.usertasks
 *.sou
-Tryingtoforceamerge
 *.user
 _ReSharper.*/
 *.userprefs
