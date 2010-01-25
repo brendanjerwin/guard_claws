@@ -6,12 +6,12 @@ A DRY guard clause library designed to provide simple, readable guard clauses. I
 Some Examples:
 ==============
 
-  var test = string.Empty;
-  Claws.NotNullNotBlank(() => test);
+    var test = string.Empty;
+    Claws.NotNullNotBlank(() => test);
  
- Will throw:
+Will throw:
  
-   GuardClaws.Exceptions.VariableMustNotBeBlankException was unhandled
+    GuardClaws.Exceptions.VariableMustNotBeBlankException was unhandled
     Message="Variable must not be blank./n/nDelinquent: test"
     Source="guard_claws"
     NameOfDelinquent="test"
