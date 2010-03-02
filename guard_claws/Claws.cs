@@ -26,9 +26,14 @@ namespace GuardClaws
             throw new VariableMustBeNumericException(variable);
         }
 
-        public static void NotDefault<T>(Func<T> variable)
-        {
-            if (!variable.Invoke().Equals(default(T))) return;
+        public static void NotDefault<T>(Func<T> variable) {
+            if (default(T) == null)
+            {
+                if (!(variable.Invoke() == null)) return;    
+            }
+            else {
+                if (!variable.Invoke().Equals(default(T))) return;    
+            }
             throw new VariableMustNotBeDefaultValueException<T>(variable);
         }
 
