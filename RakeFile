@@ -1,6 +1,20 @@
+require 'rubygems'
 require 'albacore'
+require 'net/github-upload' 
 
-project = "guard_claws"
+login = `git config github.user`.chomp  # your login for github
+token = `git config github.token`.chomp # your token for github
+repo =  $1 if repo.nil? && `git remote show origin` =~ /git@github.com:(.+?)\.git/
+die("Unable to find GitHub repo", true) if repo.nil?
+
+
+project = repo.split('/')[1]
+
+gh = Net::GitHub::Upload.new(
+:login => login,
+:token => token
+)
+
 
 namespace :release do
 	desc "Build release binaries."
@@ -13,10 +27,11 @@ namespace :release do
 	desc "Package release image"
 	zip :package => :build do |zip|
 		tag_name = ENV['TAG']
+		package_file = "#{project}-#{tag_name}.zip"
 		if tag_name 
 			zip.directories_to_zip "#{project}/bin/Release/"
 			zip.additional_files = "README.markdown"
-			zip.output_file = "#{project}-#{tag_name}.zip"
+			zip.output_file = package_file
 			zip.output_path = File.dirname(__FILE__)
 		else
 			puts 'No tag specified, not packaging.'
@@ -32,6 +47,22 @@ namespace :release do
 		else
 			puts 'No tag specified, not tagging.'
 		end
+	end
+	
+	desc "Upload release package"
+	task :upload => :package do
+		tag_name = ENV['TAG']
+		package_file = "#{project}-#{tag_name}.zip"
+		
+		puts("GitHub Repo: #{repo}")
+		puts("GitHub Login: #{login}")
+		puts("GitHub Token: #{token}")
+
+		gh.upload(
+			:repos => repo,
+			:file  => package_file,
+			:description => "Release #{ENV['TAG']}"
+		)
 	end
 	
 	desc "Do all release tasks"
