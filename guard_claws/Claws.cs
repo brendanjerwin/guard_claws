@@ -11,6 +11,13 @@ namespace GuardClaws
             throw new VariableMustNotBeNullException<T>(variable);
         }
 
+        public static void NotNull<T>(Func<T?> variable) where T : struct{
+            var instance = variable.Invoke();
+            if (!instance.HasValue){
+                throw new VariableMustNotBeNullException<T?>(variable);
+            }
+        }
+
         public static void NotNullNotBlank(Func<string> variable)
         {
             NotNull(variable);

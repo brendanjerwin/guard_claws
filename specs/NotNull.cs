@@ -25,4 +25,23 @@ namespace NotNull
             Claws.NotNull(() => test);
         }
     }
+
+    [TestFixture]
+    public class when_called_with_a_null_nullable_type : expect_an_exception<VariableMustNotBeNullException<decimal?>,decimal?>
+    {
+        protected override void StatementUnderTest() {
+            test = null;
+            Claws.NotNull(()=>test);
+        }
+    }
+
+    [TestFixture]
+    public class when_called_with_a_not_null_nullable_type
+    {
+        [Test]
+        public void It_should_do_nothing() {
+            decimal? test = 123.5M;
+            Claws.NotNull(() => test);
+        }
+    }
 }
