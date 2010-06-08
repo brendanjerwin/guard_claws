@@ -1,4 +1,5 @@
-﻿using GuardClaws;
+﻿using System;
+using GuardClaws;
 using GuardClaws.Exceptions;
 using NUnit.Framework;
 
@@ -32,6 +33,15 @@ namespace NotDefault
         {
             test = default(string);
             Claws.NotDefault(() => test);
+        }
+    }
+
+    [TestFixture]
+    public class when_called_with_a_default_value_guid : expect_an_exception<VariableMustNotBeDefaultValueException<Guid>,Guid>
+    {
+        protected override void StatementUnderTest() {
+            test = default(Guid);
+            Claws.NotDefault(()=> test);
         }
     }
 }

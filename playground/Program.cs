@@ -6,12 +6,17 @@ using GuardClaws;
 
 namespace playground
 {
+    public class foobar
+    {
+        public string SomeString { get; set; }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            var test = string.Empty;
-            Claws.NotNullNotBlank(() => test);
+            var test = new foobar { SomeString = string.Empty};
+            Claws.NotNullNotBlank(() => test.SomeString);
         }
     }
 }
