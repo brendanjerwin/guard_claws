@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using GuardClaws.Exceptions;
 
 namespace GuardClaws
@@ -24,6 +25,15 @@ namespace GuardClaws
 
             if(variable.Invoke() != string.Empty) return;
             throw new VariableMustNotBeBlankException(variable);
+        }
+
+        public static void NotNullNotEmpty<T>(Func<T> variable) where T : class, IEnumerable {
+            NotNull(variable);
+
+            var enumerator = variable.Invoke().GetEnumerator();
+            if (!enumerator.MoveNext()){
+                throw new VariableMustNotBeEmptyException<T>(variable);
+            }
         }
 
         public static void Numeric(Func<string> variable)
